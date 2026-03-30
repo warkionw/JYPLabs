@@ -172,12 +172,12 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#" data-tab="home" class="active">Home</a></li>
-            <li><a href="#" data-tab="modules">Modules</a></li>
-            <li><a href="#" data-tab="about">About</a></li>
-            <li><a href="#" data-tab="community">Community</a></li>
-            <li><a href="#" data-tab="reference">Reference</a></li>
-            <li><a href="#" data-tab="contact">Contact</a></li>
+            <li><a href="/home" class="active">Home</a></li>
+            <li><a href="/modules">Modules</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/community">Community</a></li>
+            <li><a href="/reference">Reference</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -190,77 +190,22 @@
             <div class="section-content">
                 <h1>Welcome</h1>
                 <p>CCEB Students<br>This website designed for student platform to hands-<br>on experience different experimental technique. This will give students a convenient way to learn at their own timing.</p>
-                <a href="Module" class="cta-button" onclick="openModal()">Get Started</a>
-            </div>
-        </section>
-
-        <!-- Modules Section -->
-        <section id="modules" class="content-section">
-            <div class="stars left">✨</div>
-            <div class="stars right">✨</div>
-            <div class="section-content">
-                <h1>Modules</h1>
-                <p>Explore our interactive learning modules covering bioengineering experiments, enzyme kinetics, protein analysis, and more. Each module includes virtual labs and quizzes.</p>
-            <a href="Module" class="cta-button">Browse Modules</a>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="content-section">
-            <div class="section-content">
-                <h1>About</h1>
-                <p>CCEB Student Platform is designed for bioengineering students in Singapore to gain hands-on experience with lab techniques through interactive virtual simulations.</p>
-            </div>
-        </section>
-
-        <!-- Community Section -->
-        <section id="community" class="content-section">
-            <div class="section-content">
-                <h1>Community</h1>
-                <p>Join discussions, share experiments, and collaborate with fellow bioengineering students on projects and research challenges.</p>
-            </div>
-        </section>
-
-        <!-- Reference Section -->
-        <section id="reference" class="content-section">
-            <div class="section-content">
-                <h1>Reference</h1>
-                <p>Access protocols, datasheets, enzyme kinetics calculators, HPLC guides, ELISA methods, and scientific literature references.</p>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="content-section">
-            <div class="section-content">
-                <h1>Contact</h1>
-                <p>Reach out for support, feedback, or collaboration opportunities. We're here to help you succeed in your bioengineering journey.</p>
+                <a href="/modules" class="cta-button" onclick="openModal()">Get Started</a>
             </div>
         </section>
     </div>
 
+    <!-- Modal -->
+    <div id="getStartedModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Ready to Start Learning?</h2>
+            <p>Begin your journey with our interactive bioengineering modules. Choose a module to get started!</p>
+            <a href="/modules" class="cta-button">Go to Modules</a>
+        </div>
+    </div>
 
     <script>
-        // Tab functionality
-        const tabs = document.querySelectorAll('nav a[data-tab]');
-        const sections = document.querySelectorAll('.content-section');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                // Remove active class from all tabs and sections
-                tabs.forEach(t => t.classList.remove('active'));
-                sections.forEach(s => s.classList.remove('active'));
-                
-                // Add active to clicked tab
-                tab.classList.add('active');
-                
-                // Show corresponding section
-                const targetSection = document.getElementById(tab.dataset.tab);
-                targetSection.classList.add('active');
-            });
-        });
-
         // Modal functionality for Get Started
         function openModal() {
             document.getElementById('getStartedModal').style.display = 'block';
@@ -277,6 +222,7 @@
                 closeModal();
             }
         }
+
 
 </script>
 </body>

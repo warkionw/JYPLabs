@@ -3,7 +3,7 @@
 <head>
 <style>
 body {
-  background-image: url('BG4a.png');
+  background-image: url('images/BG4a.png');
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: 100% 100%;
@@ -92,19 +92,23 @@ function redirectUser() {
 <body>
 <nav>
   <ul>
-    <li><a href="../Home">Home</a></li>
-    <li><a href="../Module">Modules</a></li>
-    <li><a href="../About">About</a></li>
-    <li><a href="../Community">Community</a></li>
-    <li><a href="../Reference">Reference</a></li>
-    <li><a href="../Contact">Contact</a></li>
+    <li><a href="/home">Home</a></li>
+    <li><a href="/modules">Modules</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/community">Community</a></li>
+    <li><a href="/reference">Reference</a></li>
+    <li><a href="/contact">Contact</a></li>
   </ul>
 </nav>   
 
 <div id="div1" ondrop="dropHandler(event)"   ondragover="dragoverHandler(event)">
-<img id="img1" src="filledBeaker.png" draggable="true" ondragstart="dragstartHandler(event)" height="200px">
+<img id="img1" src="images/filledBeaker.png" draggable="true" ondragstart="dragstartHandler(event)" height="200px">
 </div>
 <div id="div2" ondrop="dropHandler(event)"   ondragover="dragoverHandler(event)" ondragend="redirectUser(event)"></div>
 
 </body>
 </html>
+
+
+
+
