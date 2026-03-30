@@ -3,7 +3,7 @@
 <head>
 <style>
 body {
-  background-image: url('images/empty bench .png');
+  background-image: url('empty bench .png');
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: 100% 100%;
@@ -25,44 +25,15 @@ nav a {
 nav a:hover, nav a.active { background-color: #d8cbbc; color: #333; }
 
 /* RIGHT: Scrollable Info */
-.info-panel {
-    flex: 1;
-    background: rgba(255,255,255,0.95);
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    overflow-y: auto;
-}
-
-.info-step {
-    background: rgba(216,203,188,0.3);
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-left: 4px solid #ffb36b;
-}
-
-.info-step h3 {
-    color: #333;
-    margin-bottom: 10px;
-    font-size: 1.3em;
-}
-
-/* Your Next button */
-#nextBtn {
-    position: sticky;
-    bottom: 20px;
-    width: 100%;
-    font-family: "Sigmar One", sans-serif; 
-    color: gainsboro; 
-    background-color: #292D3E; 
-    border: 1px solid gainsboro; 
-    border-radius: 10px;
-    padding: 12px 20px;
-    cursor: pointer; 
-    font-size: 16px;
-    transition: all 0.2s ease-in-out;
+<link rel="stylesheet" href="pipette_common.css">
+<style>
+body {
+    background-image: url('images/empty bench .png');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
     margin-top: 20px;
+</style>
 }
 
 #nextBtn:hover {
@@ -79,7 +50,7 @@ nav a:hover, nav a.active { background-color: #d8cbbc; color: #333; }
 
 <script>
 function redirectUser() {
-  window.location.href = "Pipette_step0b";  
+  window.location.href = "Pipette_step0b.html";  
 }
 
 window.onload = function() {
@@ -92,12 +63,12 @@ window.onload = function() {
 <!-- Nav -->
 <nav>
   <ul>
-    <li><a href="/home">Home</a></li>
-    <li><a href="/modules">Modules</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/community">Community</a></li>
-    <li><a href="/reference">Reference</a></li>
-    <li><a href="/contact">Contact</a></li>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../Module.html">Modules</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../Community">Community</a></li>
+    <li><a href="../Reference">Reference</a></li>
+    <li><a href="../Contact">Contact</a></li>
   </ul>
 </nav>    
 
@@ -132,6 +103,8 @@ window.onload = function() {
 
 </body>
 </html>
+
+
 
 
 
