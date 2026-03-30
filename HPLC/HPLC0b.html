@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+body {
+  background-image: url('../HPLC/Background/empty bench .png');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+
+/* Your existing nav styles */
+nav {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; }
+nav a { 
+    text-decoration: none; color: #555; font-weight: 500; 
+    padding: 10px 20px; border-radius: 20px; transition: all 0.3s ease; 
+}
+nav a:hover, nav a.active { background-color: #d8cbbc; color: #333; }
+
+/* Main Layout - 50/50 split */
+.main-container {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    min-height: calc(100vh - 120px);
+}
+
+/* LEFT: Video Panel */
+.video-panel {
+    flex: 1;
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.video-title {
+    text-align: center;
+    color: #d8cbbc;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.video-area {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* RIGHT: Scrollable Info */
+.info-panel {
+    flex: 1;
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow-y: auto;
+}
+
+.info-step {
+    background: rgba(216,203,188,0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid #ffb36b;
+}
+
+.info-step h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+/* Your Next button */
+#nextBtn {
+    position: sticky;
+    bottom: 20px;
+    width: 100%;
+    font-family: "Sigmar One", sans-serif; 
+    color: gainsboro; 
+    background-color: #292D3E; 
+    border: 1px solid gainsboro; 
+    border-radius: 10px;
+    padding: 12px 20px;
+    cursor: pointer; 
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+    margin-top: 20px;
+}
+
+#nextBtn:hover {
+    transform: scale(1.05);
+    background-color: #d8cbbc;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .main-container { flex-direction: column; }
+    .video-area { height: 300px; }
+}
+</style>
+
+<script>
+function redirectUser() {
+  window.location.href = "HPLC1";  
+}
+
+window.onload = function() {
+  document.getElementById("nextBtn").style.display = "block";
+}
+</script>
+
+</head>
+<body>
+<!-- Nav -->
+<nav>
+  <ul>
+    <li><a href="../Home">Home</a></li>
+    <li><a href="../Module">Modules</a></li>
+    <li><a href="../About">About</a></li>
+    <li><a href="../Community">Community</a></li>
+    <li><a href="../Reference">Reference</a></li>
+    <li><a href="../Contact">Contact</a></li>
+  </ul>
+</nav>    
+
+<!-- 50/50 SIDE-BY-SIDE LAYOUT -->
+<div class="main-container">
+    <!-- LEFT: Video Panel -->
+    <div class="video-panel">
+        <div class="video-title">🎥 HPLC theory</div>
+        <div class="video-area">
+            <iframe width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/ZN7euA1fS4Y?si=bLyfjTlX3NiQRBrU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- RIGHT: Scrollable Info Panel -->
+    <div class="info-panel">
+        <h2 style="color: #d8cbbc; text-align: center; margin-bottom: 25px;">🧪 Theory </h2>
+        
+        <div class="info-step">
+            <h3>Isoelectric Focusing</h3>
+            <p>• Amino Acid that is found in protein has a net charge of 0 due to the presence of + and - charge. 
+<br>• Iso-Electric pH of protein is the pH at which net charge on protein becomes 0
+At this point the protein will not migrate in Electric Field
+<br>• Hence, we can make use of pH gradient for the separation of different protein bases on the Isoelectric point. 
+<br>• This technique is what is known as Isoelectric Focusing and 2D gel electrophoresis.
+<br>• For IEF, a gel with pH gradient is made for the experiment. 
+<br>• Proteins are loaded at the end of the gel with the lowest pH
+<br>• Protein will migrate, to the point where the Isoelectric Point Is equivalent to the pH of the gel. 
+<br>• It will in turn obtain an equal number of + and - charge. Hence Net charge becomes 0 and stops migrating.
+<br>• Migration will stop when pH = pI. This is the basis of separation in IEF 
+</p>
+</div>
+        
+        <div class="info-step">
+            <h3>2D Gel Electrophoresis</h3>
+            <p>•IEF is usually followed by 2D gel electrophoresis, also known as SDS-PAGE 
+<br>• It further allows the separation of protein. 
+<br>• It is widely used to find the presence of protein, expression protein or the identification in different cells or tissue. 
+</p>
+        </div>
+        
+
+        <button id="nextBtn" onclick="redirectUser()">
+            Lets Try out the experiment!
+        </button>
+    </div>
+</div>
+
+</body>
+</html>
+

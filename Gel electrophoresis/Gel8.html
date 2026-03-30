@@ -1,0 +1,197 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>Forced Video Modal</title> 
+
+  <!-- Google Font Sigmar One --> 
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet"> 
+
+  <style> 
+    body { 
+      background-image: url('BG8.png'); 
+      background-repeat: no-repeat; 
+      background-attachment: fixed;  
+      background-size: 100% 100%; 
+      min-height: 100vh;
+      padding: 20px;
+    } 
+
+    /* TOP NAV */
+    nav {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 15px 0;
+      margin-bottom: 60px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      max-width: 1000px;
+      margin: 20px auto 60px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover, nav a.active {
+      background-color: #d8cbbc;
+      color: #333;
+    }
+
+    /* CENTER WATCH BUTTON */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 200px);
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    #openVideoBtn { 
+      font-family: "Sigmar One", sans-serif; 
+      color: #d8cbbc; 
+      background-color: #292D3E; 
+      border: 1px solid #d8cbbc; 
+      border-radius: 10px;
+      padding: 20px 40px; 
+      cursor: pointer; 
+      font-size: 50px; 
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 10px 30px rgba(41, 45, 62, 0.5);
+    } 
+
+    #openVideoBtn:hover { 
+      transform: scale(1.1); 
+      box-shadow: 0 15px 40px rgba(41, 45, 62, 0.7);
+    } 
+
+    /* MODAL */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .modal.show { 
+      display: flex; 
+    } 
+
+    .modal-content {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 90%;
+      max-height: 90%;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    iframe { 
+      width: 840px; 
+      height: 473px;
+      border-radius: 15px;
+      display: block; 
+      margin-bottom: 20px;
+    } 
+
+    body.modal-open { 
+      overflow: hidden; 
+    } 
+
+    /* Next button - CENTERED bottom */
+    #nextBtn {
+      display: block;
+      margin: 20px auto 0;
+      font-family: "Sigmar One", sans-serif; 
+      color: gainsboro; 
+      background-color: #292D3E; 
+      border: 1px solid gainsboro; 
+      border-radius: 10px;
+      padding: 15px 30px;
+      cursor: pointer; 
+      font-size: 20px;
+      transition: all 0.2s ease-in-out;
+      width: fit-content;
+    }
+
+    #nextBtn:hover {
+      transform: scale(1.05);
+      background-color: #d8cbbc;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      nav ul { flex-wrap: wrap; gap: 15px; }
+      #openVideoBtn { font-size: 35px; padding: 15px 25px; }
+      iframe { height: 350px; }
+    }
+  </style> 
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const openBtn = document.getElementById("openVideoBtn");
+      const modal = document.getElementById("videoModal");
+      const nextBtn = document.getElementById("nextBtn");
+
+      openBtn.addEventListener("click", () => {
+        modal.classList.add("show");
+        document.body.classList.add("modal-open");
+        nextBtn.style.display = "block";
+      });
+    });
+
+    function redirectUser() {
+      window.location.href = "Gel9q";
+    }
+  </script>
+</head> 
+<body> 
+  <!-- TOP NAV -->
+  <nav>
+    <ul>
+      <li><a href="../Home">Home</a></li>
+      <li><a href="../Module">Modules</a></li>
+      <li><a href="../About">About</a></li>
+      <li><a href="../Community">Community</a></li>
+      <li><a href="../Reference">Reference</a></li>
+      <li><a href="../Contact">Contact</a></li>
+    </ul>
+  </nav>    
+
+  <!-- CENTER WATCH BUTTON -->
+  <div class="main-content">
+    <button id="openVideoBtn">Watch Video</button> 
+  </div>
+
+  <!-- MODAL -->
+  <div id="videoModal" class="modal"> 
+    <div class="modal-content"> 
+      <iframe src="https://www.youtube.com/embed/5oFN2Jpck1g?si=iLdnVqL8vF9PTp7S" 
+              frameborder="0" allowfullscreen>
+      </iframe> 
+      <button id="nextBtn" onclick="redirectUser()">
+        ➡️ Next: QUIZ
+      </button>
+    </div> 
+  </div>
+</body> 
+</html>

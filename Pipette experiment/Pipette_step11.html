@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple MCQ Quiz</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .question { margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ccc; }
+    .feedback { margin-top: 10px; font-weight: bold; }
+    .correct { color: green; }
+    .wrong { color: red; }
+    #submit-btn { margin-top: 20px; }
+    #result { font-weight: bold; margin-top: 20px; }
+
+    body {
+  background-image: url('blank.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+nav {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px 0;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: #d8cbbc; /* Complementary */
+            color: #333;
+        }
+  </style>
+</head>
+<body>
+  <nav>
+  <ul>
+    <li><a href="../Home">Home</a></li>
+    <li><a href="../Module">Modules</a></li>
+    <li><a href="../About">About</a></li>
+    <li><a href="../Community">Community</a></li>
+    <li><a href="../Reference">Reference</a></li>
+    <li><a href="../Contact">Contact</a></li>
+  </ul>
+</nav>    
+
+  <h1>Simple MCQ Quiz</h1>
+
+  <div id="quiz-container">
+    <!-- Question 1 -->
+<div class="question" data-correct="b">
+  <p>1. What is the correct tip immersion depth when aspirating?</p>
+  <label><input type="radio" name="q1" value="a"> 5-10mm below surface</label><br>
+  <label><input type="radio" name="q1" value="b"> 2-3mm below surface</label><br>
+  <label><input type="radio" name="q1" value="c"> Touching bottom</label><br>
+  <label><input type="radio" name="q1" value="d"> Fully submerged</label><br>
+  <div class="feedback"></div>
+</div>
+
+<!-- Question 2 -->
+<div class="question" data-correct="b">
+  <p>2. Why do you pre-wet the pipette tip before measuring?</p>
+  <label><input type="radio" name="q2" value="a"> Clean the tip</label><br>
+  <label><input type="radio" name="q2" value="b"> Saturate tip air space</label><br>
+  <label><input type="radio" name="q2" value="c"> Warm the pipette</label><br>
+  <label><input type="radio" name="q2" value="d"> Test volume accuracy</label><br>
+  <div class="feedback"></div>
+</div>
+
+<!-- Question 3 -->
+<div class="question" data-correct="b">
+  <p>3. During dispensing, what angle should the pipette be?</p>
+  <label><input type="radio" name="q3" value="a"> Vertical (90°)</label><br>
+  <label><input type="radio" name="q3" value="b"> 20-45° against wall</label><br>
+  <label><input type="radio" name="q3" value="c"> Horizontal (0°)</label><br>
+  <label><input type="radio" name="q3" value="d"> 60° upward</label><br>
+  <div class="feedback"></div>
+</div>
+
+<!-- Question 4 -->
+<div class="question" data-correct="c">
+  <p>4. What does pressing to the SECOND stop accomplish?</p>
+  <label><input type="radio" name="q4" value="a"> Aspirate liquid</label><br>
+  <label><input type="radio" name="q4" value="b"> Mix solution</label><br>
+  <label><input type="radio" name="q4" value="c"> Empty tip completely</label><br>
+  <label><input type="radio" name="q4" value="d"> Eject tip</label><br>
+  <div class="feedback"></div>
+</div>
+
+<!-- Question 5 -->
+<div class="question" data-correct="b">
+  <p>5. When should you change the pipette tip?</p>
+  <label><input type="radio" name="q5" value="a"> Every 10 uses</label><br>
+  <label><input type="radio" name="q5" value="b"> Between different solutions/samples</label><br>
+  <label><input type="radio" name="q5" value="c"> Only when visibly dirty</label><br>
+  <label><input type="radio" name="q5" value="d"> At end of experiment</label><br>
+  <div class="feedback"></div>
+</div>
+
+<!-- Question 6 -->
+<div class="question" data-correct="b">
+  <p>6. What is the primary purpose of changing pipette tips?</p>
+  <label><input type="radio" name="q6" value="a"> Improve accuracy</label><br>
+  <label><input type="radio" name="q6" value="b"> Prevent cross-contamination</label><br>
+  <label><input type="radio" name="q6" value="c"> Reduce evaporation</label><br>
+  <label><input type="radio" name="q6" value="d"> Extend pipette life</label><br>
+  <div class="feedback"></div>
+</div>
+
+<!-- Question 7 -->
+<div class="question" data-correct="a">
+  <p>7. Proper pipetting angle during aspiration is:</p>
+  <label><input type="radio" name="q7" value="a"> Vertical or ≤20°</label><br>
+  <label><input type="radio" name="q7" value="b"> 45°</label><br>
+  <label><input type="radio" name="q7" value="c"> Horizontal</label><br>
+  <label><input type="radio" name="q7" value="d"> 60°</label><br>
+  <div class="feedback"></div>
+</div>
+
+<!-- Question 8 -->
+<div class="question" data-correct="b">
+  <p>8. What should you do immediately after pipetting different solutions?</p>
+  <label><input type="radio" name="q8" value="a"> Rinse pipette body</label><br>
+  <label><input type="radio" name="q8" value="b"> Change the tip</label><br>
+  <label><input type="radio" name="q8" value="c"> Pre-wet 5 times</label><br>
+  <label><input type="radio" name="q8" value="d"> Blow out twice</label><br>
+  <div class="feedback"></div>
+</div> 
+
+  <button id="submit-btn">Submit answers</button>
+  <p id="result"></p>
+
+  <script>
+    const questions = document.querySelectorAll('.question');
+    const submitBtn = document.getElementById('submit-btn');
+    const result = document.getElementById('result');
+
+    submitBtn.addEventListener('click', () => {
+      let score = 0;
+      let total = questions.length;
+      let allAnswered = true;
+
+      questions.forEach((q, index) => {
+        const correct = q.getAttribute('data-correct');
+        const selected = q.querySelector('input[type="radio"]:checked');
+        const feedback = q.querySelector('.feedback');
+
+        if (!selected) {
+          // Not answered
+          feedback.textContent = 'Please select an answer.';
+          feedback.className = 'feedback wrong';
+          allAnswered = false;
+          return;
+        }
+
+        if (selected.value === correct) {
+          feedback.textContent = 'Correct.';
+          feedback.className = 'feedback correct';
+          score++;
+        } else {
+          feedback.textContent = 'Wrong. Please review this question.';
+          feedback.className = 'feedback wrong';
+        }
+      });
+
+      if (!allAnswered) {
+        result.textContent = 'Please answer all questions before submitting.';
+        result.style.color = 'red';
+      } else {
+        result.textContent = `You scored ${score} out of ${total}.`;
+        result.style.color = 'black';
+      }
+    });
+  </script>
+</body>
+</html>

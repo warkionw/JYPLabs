@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+body {
+  background-image: url('../HPLC/Background/BG2.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+nav {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px 0;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: #d8cbbc; /* Complementary */
+            color: #333;
+        }
+#div1 {
+    position: absolute;
+    margin: 10px;
+    padding: 10px;
+    height: 150px;
+    width: 10px;
+}
+
+#div2 {
+    position: absolute;
+    margin: 10px;
+    padding: 10px;
+    height: 170px;
+    width: 33px;
+}
+#div1 {
+    top: 20%;
+    left: 34%;
+    border: 10px solid darkcyan;
+}
+
+#div2 {
+    top: 30%;
+    left: 50%;
+    border: 10px dashed darkblue;
+
+}
+
+#div1, #div2 {
+    border: none;  /* Completely hides boxes */
+}
+
+</style>
+<script>
+function dragstartHandler(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function dragoverHandler(ev) {
+  ev.preventDefault();
+}
+
+function dropHandler(ev) {
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
+function redirectUser() {
+  window.location.href = "HPLC3A";
+}
+</script> 
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="../Home" class="active">Home</a></li>
+    <li><a href="../Module">Modules</a></li>
+    <li><a href="../About">About</a></li>
+    <li><a href="../Community">Community</a></li>
+    <li><a href="../Reference">Reference</a></li>
+    <li><a href="../Contact">Contact</a></li>
+  </ul>
+</nav>
+<div id="div1" ondrop="dropHandler(event)"   ondragover="dragoverHandler(event)">
+<img id="img1" src="../HPLC/Equipment Element/Pipette.png" draggable="true" ondragstart="dragstartHandler(event)" height="300px">
+</div>
+<div id="div2" ondrop="dropHandler(event)"   ondragover="dragoverHandler(event)" ondragend="redirectUser(event)"></div>
+
+</body>
+</html>

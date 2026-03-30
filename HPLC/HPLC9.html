@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple MCQ Quiz</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .question { margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ccc; }
+    .feedback { margin-top: 10px; font-weight: bold; }
+    .correct { color: green; }
+    .wrong { color: red; }
+    #submit-btn { margin-top: 20px; }
+    #result { font-weight: bold; margin-top: 20px; }
+
+    body {
+  background-image: url('../HPLC/Background/blank.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+nav {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px 0;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: #d8cbbc; /* Complementary */
+            color: #333;
+        }
+  </style>
+</head>
+<body>
+  <nav>
+  <ul>
+    <li><a href="../Home">Home</a></li>
+    <li><a href="../Module">Modules</a></li>
+    <li><a href="../About">About</a></li>
+    <li><a href="../Community">Community</a></li>
+    <li><a href="../Reference">Reference</a></li>
+    <li><a href="../Contact">Contact</a></li>
+  </ul>
+</nav>    
+
+  <h1>Simple MCQ Quiz</h1>
+
+  <div id="quiz-container">
+    <!-- Question 1 -->
+<div class="question" data-correct="c">
+<p>1. What is the main purpose of High Performance Liquid Chromatography (HPLC)?</p>
+<label><input type="radio" name="q1" value="a"> To measure the pH of a solution.</label><br>
+<label><input type="radio" name="q1" value="b"> To amplify DNA samples.</label><br>
+<label><input type="radio" name="q1" value="c"> To separate, identify, and quantify components in a mixture.</label><br>
+<label><input type="radio" name="q1" value="d"> To determine the molecular weight of proteins.</label><br>
+<div class="feedback"></div>
+</div>
+
+<!-- Question 2 -->
+<div class="question" data-correct="a">
+<p>2. In an HPLC system, what is the role of the mobile phase?</p>
+<label><input type="radio" name="q2" value="a"> To carry the sample through the column.</label><br>
+<label><input type="radio" name="q2" value="b"> To permanently bind the sample molecules.</label><br>
+<label><input type="radio" name="q2" value="c"> To detect separated compounds.</label><br>
+<label><input type="radio" name="q2" value="d"> To store the sample before injection.</label><br>
+<div class="feedback"></div>
+</div>
+
+<!-- Question 3 -->
+<div class="question" data-correct="d">
+<p>3. Which component of the HPLC system is responsible for moving the mobile phase through the system at high pressure?</p>
+<label><input type="radio" name="q3" value="a"> Detector</label><br>
+<label><input type="radio" name="q3" value="b"> Column oven</label><br>
+<label><input type="radio" name="q3" value="c"> Autosampler</label><br>
+<label><input type="radio" name="q3" value="d"> Pump</label><br>
+<div class="feedback"></div>
+</div>
+
+<!-- Question 4 -->
+<div class="question" data-correct="b">
+<p>4. What is the function of the HPLC column?</p>
+<label><input type="radio" name="q4" value="a"> To inject the sample into the system.</label><br>
+<label><input type="radio" name="q4" value="b"> To separate compounds based on their interaction with the stationary phase.</label><br>
+<label><input type="radio" name="q4" value="c"> To generate pressure in the system.</label><br>
+<label><input type="radio" name="q4" value="d"> To detect UV signals from compounds.</label><br>
+<div class="feedback"></div>
+</div>
+
+<!-- Question 5 -->
+<div class="question" data-correct="a">
+<p>5. What is the purpose of the detector in an HPLC system?</p>
+<label><input type="radio" name="q5" value="a"> To detect compounds as they elute from the column.</label><br>
+<label><input type="radio" name="q5" value="b"> To mix the mobile phase solvents.</label><br>
+<label><input type="radio" name="q5" value="c"> To maintain constant pressure.</label><br>
+<label><input type="radio" name="q5" value="d"> To heat the column.</label><br>
+<div class="feedback"></div>
+</div>
+
+<!-- Question 6 -->
+<div class="question" data-correct="c">
+<p>6. What does the retention time in HPLC represent?</p>
+<label><input type="radio" name="q6" value="a"> The time taken to prepare the sample.</label><br>
+<label><input type="radio" name="q6" value="b"> The time required to clean the column.</label><br>
+<label><input type="radio" name="q6" value="c"> The time it takes for a compound to travel through the column and reach the detector.</label><br>
+<label><input type="radio" name="q6" value="d"> The time needed for the pump to stabilize.</label><br>
+<div class="feedback"></div>
+</div>
+
+<!-- Question 7 -->
+<div class="question" data-correct="d">
+<p>7. What device is typically used to introduce the sample into the HPLC system?</p>
+<label><input type="radio" name="q7" value="a"> UV detector</label><br>
+<label><input type="radio" name="q7" value="b"> Degasser</label><br>
+<label><input type="radio" name="q7" value="c"> Column oven</label><br>
+<label><input type="radio" name="q7" value="d"> Injector or autosampler</label><br>
+<div class="feedback"></div>
+</div>
+
+<!-- Question 8 -->
+<div class="question" data-correct="b">
+<p>8. Why is degassing the mobile phase important in HPLC?</p>
+<label><input type="radio" name="q8" value="a"> To increase the color of the solvent.</label><br>
+<label><input type="radio" name="q8" value="b"> To remove dissolved gases that may cause bubbles and interfere with detection.</label><br>
+<label><input type="radio" name="q8" value="c"> To reduce the viscosity of the solvent.</label><br>
+<label><input type="radio" name="q8" value="d"> To sterilize the mobile phase.</label><br>
+<div class="feedback"></div>
+</div>
+
+
+  <button id="submit-btn">Submit answers</button>
+  <p id="result"></p>
+
+  <script>
+    const questions = document.querySelectorAll('.question');
+    const submitBtn = document.getElementById('submit-btn');
+    const result = document.getElementById('result');
+
+    submitBtn.addEventListener('click', () => {
+      let score = 0;
+      let total = questions.length;
+      let allAnswered = true;
+
+      questions.forEach((q, index) => {
+        const correct = q.getAttribute('data-correct');
+        const selected = q.querySelector('input[type="radio"]:checked');
+        const feedback = q.querySelector('.feedback');
+
+        if (!selected) {
+          // Not answered
+          feedback.textContent = 'Please select an answer.';
+          feedback.className = 'feedback wrong';
+          allAnswered = false;
+          return;
+        }
+
+        if (selected.value === correct) {
+          feedback.textContent = 'Correct.';
+          feedback.className = 'feedback correct';
+          score++;
+        } else {
+          feedback.textContent = 'Wrong. Please review this question.';
+          feedback.className = 'feedback wrong';
+        }
+      });
+
+      if (!allAnswered) {
+        result.textContent = 'Please answer all questions before submitting.';
+        result.style.color = 'red';
+      } else {
+        result.textContent = `You scored ${score} out of ${total}.`;
+        result.style.color = 'black';
+      }
+    });
+  </script>
+</body>
+</html>

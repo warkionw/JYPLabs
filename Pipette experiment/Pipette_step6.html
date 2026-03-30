@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+body {
+  background-image: url('BG6.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+
+nav {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px 0;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #d8cbbc;
+  color: #333;
+}
+
+#div1 {
+  position: absolute;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  top: 10%;
+  left: 13%;
+  border: 10px solid darkcyan;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+#div1, #div2 {
+    border: none;  /* Completely hides boxes */
+}
+
+/* Volume bar animation */
+
+#volumeBar{
+  position: absolute;
+  width: 15px;
+  height: 30px;
+  background-color: #3f71d4;
+  left: 112px;
+  top: 168px;
+  border-radius: 5px;
+  transition: transform 3s linear;
+}
+
+</style>
+
+<script>
+let holdTimer = null;
+
+function startHold(){
+  // REVERSED: Press → bar moves UP (negative Y)
+  document.getElementById("volumeBar").style.transform = "translateY(-40px)";
+  
+  holdTimer = setTimeout(function(){
+    redirectUser();
+  }, 3000);
+}
+
+function stopHold(){
+  clearTimeout(holdTimer);
+  
+  // REVERSED: Release → bar moves DOWN (positive Y, back to 0)
+  document.getElementById("volumeBar").style.transform = "translateY(0px)";
+}
+
+function redirectUser(){
+  window.location.href="Pipette_step7";
+}
+
+</script>
+
+</head>
+
+<body>
+
+<nav>
+<ul>
+<li><a href="../Home">Home</a></li>
+<li><a href="../Module">Modules</a></li>
+<li><a href="../About">About</a></li>
+<li><a href="../Community">Community</a></li>
+<li><a href="../Reference">Reference</a></li>
+<li><a href="../Contact">Contact</a></li>
+</ul>
+</nav>
+
+<div id="div1"
+onmousedown="startHold()"
+onmouseup="stopHold()"
+onmouseleave="stopHold()">
+
+
+<div id="volumeBar"></div>
+
+</div>
+
+</body>
+</html>

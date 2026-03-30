@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+body {
+  background-image: url('BG7.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+
+nav {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px 0;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    background-color: #d8cbbc;
+    color: #333;
+}
+
+#nextBtn {
+    position: fixed;  /* Changed from absolute */
+    right: 20px;
+    bottom: 20px;
+    font-family: "Sigmar One", sans-serif; 
+    color: gainsboro; 
+    background-color: #292D3E; 
+    border: 1px solid gainsboro; 
+    border-radius: 10px;
+    padding: 12px 20px;  /* Bigger padding */
+    cursor: pointer; 
+    font-size: 18px;
+    z-index: 1000;  /* On top */
+    transition: all 0.2s ease-in-out;
+}
+
+#nextBtn:hover {
+    transform: scale(1.05);
+    background-color: #d8cbbc;
+    color: #333;
+}
+</style>
+
+<script>
+function redirectUser() {
+  window.location.href = "Gel8";
+}
+
+setTimeout(() => {
+  document.getElementById("nextBtn").style.display = "block";
+}, 3000);
+</script>
+
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="../Home">Home</a></li>
+    <li><a href="../Module">Modules</a></li>
+    <li><a href="../About">About</a></li>
+    <li><a href="../Community">Community</a></li>
+    <li><a href="../Reference">Reference</a></li>
+    <li><a href="../Contact">Contact</a></li>
+  </ul>
+</nav>    
+
+<button id="nextBtn" onclick="redirectUser()">Prepare 5 different pH protein</button>
+
+</body>
+</html>

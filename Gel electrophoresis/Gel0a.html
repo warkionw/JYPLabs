@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+body {
+  background-image: url('empty bench .png');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+
+/* Your existing nav styles */
+nav {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; }
+nav a { 
+    text-decoration: none; color: #555; font-weight: 500; 
+    padding: 10px 20px; border-radius: 20px; transition: all 0.3s ease; 
+}
+nav a:hover, nav a.active { background-color: #d8cbbc; color: #333; }
+
+/* RIGHT: Scrollable Info */
+.info-panel {
+    flex: 1;
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow-y: auto;
+}
+
+.info-step {
+    background: rgba(216,203,188,0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid #ffb36b;
+}
+
+.info-step h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+/* Your Next button */
+#nextBtn {
+    position: sticky;
+    bottom: 20px;
+    width: 100%;
+    font-family: "Sigmar One", sans-serif; 
+    color: gainsboro; 
+    background-color: #292D3E; 
+    border: 1px solid gainsboro; 
+    border-radius: 10px;
+    padding: 12px 20px;
+    cursor: pointer; 
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+    margin-top: 20px;
+}
+
+#nextBtn:hover {
+    transform: scale(1.05);
+    background-color: #d8cbbc;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .main-container { flex-direction: column; }
+    .video-area { height: 300px; }
+}
+</style>
+
+<script>
+function redirectUser() {
+  window.location.href = "Gel0b";  
+}
+
+window.onload = function() {
+  document.getElementById("nextBtn").style.display = "block";
+}
+</script>
+
+</head>
+<body>
+<!-- Nav -->
+<nav>
+  <ul>
+    <li><a href="../Home">Home</a></li>
+    <li><a href="../Module">Modules</a></li>
+    <li><a href="../About">About</a></li>
+    <li><a href="../Community">Community</a></li>
+    <li><a href="../Reference">Reference</a></li>
+    <li><a href="../Contact">Contact</a></li>
+  </ul>
+</nav>    
+
+    <!-- RIGHT: Scrollable Info Panel -->
+    <div class="info-panel">
+        <h2 style="color: #d8cbbc; text-align: center; margin-bottom: 25px;">🧪 Instructions </h2>
+        
+        <div class="info-step">
+            <h3>About This Virtual Module</h3>
+            <p>In this module you will be learning about Gel Electrophoresis.
+                <br>• Through watching the provided video and reading the information below, you will gain a better understanding of the concepts and techniques involved.
+                <br>• Next, you will learn about the practical applications of these techniques in a laboratory setting. 
+                This will be done through a simple replication of the experiment below. 
+                <br>• After which, through a simple quiz, you will be able to test your knowledge. 
+</p>
+</div>
+        
+        <div class="info-step">
+            <h3>Experiment Procedures</h3>
+            <p>• IEF is usually followed by 2D gel electrophoresis, also known as SDS-PAGE
+<br>• It further allows the separation of protein.
+<br>• It is widely used to find the presence of protein, expression protein or the identification in different cells or tissue.
+</p>
+        </div>
+        
+
+        <button id="nextBtn" onclick="redirectUser()">
+            Lets Try out the experiment!
+        </button>
+    </div>
+</div>
+
+</body>
+</html>

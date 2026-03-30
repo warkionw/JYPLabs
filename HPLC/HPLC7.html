@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+body {
+  background-image: url('../HPLC/Background/BG6C.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+nav {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px 0;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: #d8cbbc; /* Complementary */
+            color: #333;
+        }
+
+.game-box {
+  background: #d8cbbc;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 380px;
+  top:30%;
+  left: 50%;
+  transform: translate(20%, 90%);
+}
+h1 {
+  margin: 0 0 20px;
+  font-size: 20px;
+}
+
+#timer {
+  font-size: 48px;
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #16a34a;
+  color: #fff;
+  transition: 0.2s;
+}
+button:hover {
+  background: #15803d;
+}
+#message {
+  font-size: 16px;
+  margin: 15px 0;
+  min-height: 20px;
+}
+/* Added: Next button hidden until displayed */
+#nextBtn {
+  display: none;
+}
+/* End Added */
+</style>
+</head>
+<body>
+    <div class="game-box">
+  <h1>Challenge: Stop the Timer at 10s</h1>
+  <div id="timer">0.000</div>
+  <button id="startBtn">Start</button>
+  <div id="message"></div>
+  <!-- Added: Next button to proceed to video modal after winning. Can change page if needed -->
+  <button id="nextBtn" onclick="location.href='HPLC8'">Next</button>
+  <!-- End Added -->
+  </div>
+</body>
+<script>
+const messageEl = document.getElementById('message');
+const startBtn = document.getElementById('startBtn');
+const timerEl = document.getElementById('timer');
+const btn = document.getElementById('startBtn');
+// Added: Get reference to Next button
+const nextBtn = document.getElementById('nextBtn');
+// End Added
+let timer = null;
+let startTime = false;
+let running = false;
+
+function startTimer() {
+  startTime = performance.now();
+  timer = requestAnimationFrame(updateTimer);
+  btn.textContent = 'Stop';
+  messageEl.textContent = '';
+  running = true;
+}
+
+function stopTimer() {
+  cancelAnimationFrame(timer);
+  running = false;
+  const elapsed = (performance.now() - startTime) / 1000;
+  timerEl.textContent = elapsed.toFixed(2);
+  
+if (Math.abs(elapsed - 10) <= 0.5) {
+    messageEl.textContent = 'Perfect! You Win!';
+    messageEl.style.color = '#16a34a';
+    // Added: Show Next button when player wins
+    nextBtn.style.display = 'inline-block';
+    // End Added
+  } else if (elapsed < 10) {
+    messageEl.textContent = '⏱️ Too fast!';
+    messageEl.style.color = '#f43f5e';
+  } else {
+    messageEl.textContent = '⏳ Too slow!';
+    messageEl.style.color = '#f43f5e';
+  }
+  btn.textContent = 'Start';
+}
+function updateTimer() {
+  const elapsed = (performance.now() - startTime) / 1000;
+  timerEl.textContent = elapsed.toFixed(2);
+  timer = requestAnimationFrame(updateTimer);
+}
+btn.addEventListener('click', () => {
+  if (running) stopTimer();
+  else startTimer();
+});
+</script>
+</html>
